@@ -1,0 +1,29 @@
+.container
+    background-color: #fff
+
+    .main
+        display: grid
+        grid-template-areas: "img" "tittle"  "text" "date"
+        gap:1em
+        padding-bottom: 50px
+        
+        
+        .tittle
+            grid-area: tittle
+            text-align: center
+        
+        .small
+            grid-area: date
+            text-align: right
+            margin-right: 1em
+            
+        .img
+            margin-top: 8vh
+            grid-area: img
+            width: 100%
+
+        .text
+            grid-area:  text
+            width: 90%
+            text-align: justify
+            justify-self: center

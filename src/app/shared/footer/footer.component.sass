@@ -1,0 +1,43 @@
+.footer
+    background-color: red
+    display: flex
+    flex-direction: column
+    align-items: center
+    background: linear-gradient(rgba(16, 16, 16, .7), rgba(16, 16, 16, .85))
+        
+
+    .container__footer
+        margin-top: 1em
+        //background-color: green
+        width: 85%
+        display: grid
+        grid-template-areas: "social" "education" "links"
+        gap:1em       
+
+        .education
+            grid-area: education
+            
+            a
+                margin-top: 1em
+                color: #fff
+
+        .links
+            grid-area: links
+            a
+                img
+                    
+                    margin: 1em 0
+                    width: 100%
+                    height: 100px
+                    background-color: white
+                    border-radius: .5em
+
+        .social__networks
+            display: flex
+            justify-content: space-between
+            color: #fff
+            grid-area: social
+            font-size: 2em
+            a
+                color: #fff
+                

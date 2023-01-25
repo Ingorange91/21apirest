@@ -1,0 +1,52 @@
+<section class="section">
+    <div class="background">
+    </div>
+    <section class="main col-xy-flexbox-center">
+
+        
+
+        <!-- <article class="news col-xy-flexbox-center" *ngFor="let item of datos; let indice=index">
+           
+            <small>Fecha: <strong>{{item.date}}</strong></small>
+            
+            <img src="{{item.img}}" alt="">
+            <h1 class="title">{{item.tittle}}</h1>
+            <p>{{item.text.slice(0,300)}}</p>
+            <small><a routerLink="noticia/{{id[indice]}}">leer mas...</a></small>
+          
+        </article> -->
+
+        <article class="news col-xy-flexbox-center" *ngFor="let item of datos | pagination:page; let indice=index">
+       
+            
+            <small>Fecha: <strong>{{item.date}}</strong></small>
+            
+            <img src="{{item.img}}" alt="">
+            <h1 class="title">{{item.tittle}}</h1>
+            <p>{{item.text.slice(0,300)}}</p>
+            <small><a routerLink="noticia/{{id[indice]}}">leer mas...</a></small>
+            
+        </article>
+
+        <ng-container *ngIf="(datos | pagination:page).length==0">
+            <article class="news col-xy-flexbox-center" >
+                <p class="tittle">no hay mas noticias para mostrar</p>
+            </article>
+
+        </ng-container>
+
+        <!-- <p>Elementos hasta: {{page}}</p> -->
+        <!-- <p>Paginas a cargar : {{pagination}}</p> -->
+
+     
+        <div class="xy-flexbox-center">
+            <button class="btnPage" (click)="pre()" [hidden]="currentPage==1" >&lt;</button>
+            <button class="btnPage">pagina {{currentPage}} de {{pagination}}</button>
+            <button class="btnPage" (click)="next()" [hidden]="currentPage==pagination">></button>
+            
+        </div>
+        
+        
+    </section>
+
+</section>

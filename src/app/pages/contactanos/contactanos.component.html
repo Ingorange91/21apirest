@@ -1,0 +1,55 @@
+<section class="container">
+    <div class="empty"></div>
+    <section class="contact-us">
+
+        <a href="tel:664 625 3203" target="_blank"><i class="fa-solid fa-phone"></i></a>
+        <a href="https://facebook.com" target=”_blank><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://youtube.com" target="_blank"><i class="fa-brands fa-youtube"></i></a>  
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d13458.089437477785!2d-116.9226318!3d32.5121931!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x2ba06c3bec83fb01!2sESCUELA%20SECUNDARIA%20TECNICA%20NUM.%2021!5e0!3m2!1ses-419!2smx!4v1652896498331!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+       
+    </section>
+</section>
+
+<section class="main">
+    
+    <h1>¿TIENES ALGUNA DUDA?</h1>
+    <div class="main__form">
+
+        <form (ngSubmit)="contactUs()" [formGroup]="frmContactUs" novalidate>
+
+            <!--Validaciones name-->
+            <ng-container *ngIf="frmContactUs.get('name')?.errors && frmContactUs.get('name')?.touched">
+                <p class="error" *ngIf="frmContactUs.get('name')?.hasError('required')">EL CAMPO NOMBRE ES OBLIGATORIO</p>
+                <div class="margin-top"></div>
+                <p class="error" *ngIf="frmContactUs.get('name')?.hasError('pattern')" >Solo se admiten letra en nombre</p>
+            </ng-container>
+            <input type="text" [class.error-input]="frmContactUs.get('name')?.errors && frmContactUs.get('name')?.touched" formControlName="name" placeholder="NOMBRE">
+              <!--validaciones email-->
+            <ng-container *ngIf="frmContactUs.get('email')?.errors && frmContactUs.get('email')?.touched">
+                <p class="error" *ngIf="frmContactUs.get('email')?.hasError('required')">EL CAMPO CORREO ES OBLIGATORIO</p>
+                <div class="margin-top"></div>
+                <p class="error" *ngIf="frmContactUs.get('email')?.hasError('pattern')">formato de correo invalido</p>
+            </ng-container>
+            <input type="email" [class.error-input]="frmContactUs.get('email')?.errors && frmContactUs.get('email')?.touched" formControlName="email" placeholder="CORREO">
+
+              <!-- validaciones phone-->
+            <ng-container *ngIf="frmContactUs.get('phone')?.errors && frmContactUs.get('phone')?.touched">                
+                <p class="error" *ngIf="frmContactUs.get('phone')?.hasError('pattern')">solo se admiten numeros en este campo</p>
+                <div class="margin-top"></div>
+                <p class="error" *ngIf="frmContactUs.get('phone')?.hasError('minlength') ||  frmContactUs.get('phone')?.hasError('maxlength')">el Telefono debe tener 10 numeros</p>
+            </ng-container>
+            <input type="text"  formControlName="phone" placeholder="TELEFONO **OPCIONAL**">
+
+              <!-- validaciones description-->
+            <ng-container *ngIf="frmContactUs.get('description')?.errors && frmContactUs.get('description')?.touched">
+                <p class="error" *ngIf="frmContactUs.get('description')?.hasError('required')">EL CAMPO duda o comentario es obligatorio</p>
+            </ng-container>
+            <textarea [class.error-input]="frmContactUs.get('description')?.errors && frmContactUs.get('description')?.touched" name="" formControlName="description" cols="25" rows="10" placeholder="Duda o comentarios"></textarea>
+            <button class="btnMovil">ENVIAR</button>          
+        
+        </form>
+
+    </div>
+</section>
+
+<!-- efactorizar codigo en un servicio que retorne el valor de los errores a utilizar -->

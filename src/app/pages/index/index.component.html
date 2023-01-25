@@ -1,0 +1,21 @@
+<section class="section">
+    <div class="background">
+    </div>
+    <main class="main col-xy-flexbox-center">
+
+        <article class="news col-xy-flexbox-center" *ngFor="let item of datos; let indice=index">
+            <small>Fecha: <strong>{{item.date}}</strong></small>
+            <img src="{{item.img}}" alt="">
+            <h1 class="title">{{item.tittle}}</h1>
+            <p>{{item.text.slice(0,300)}}...</p>
+            <p><a routerLink="noticias/noticia">leer mas...</a></p>
+        </article>
+
+
+    
+
+
+
+    </main>
+
+</section>

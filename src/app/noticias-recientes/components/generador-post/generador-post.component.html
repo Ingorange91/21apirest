@@ -1,0 +1,38 @@
+<section class="section">
+    <div class="background">
+        <h1>BIENVENIDO  ADMINISTRADOR DEL PORTAL</h1>
+    </div>
+</section>
+<section class="main">
+    <form class="frm" (ngSubmit)="GenerarPost()" [formGroup]="frmGenerarPost" novalidate>
+        
+        <h1>DATOS PUBLICACION</h1>
+
+            <ng-container *ngIf="frmGenerarPost.get('tittle')?.errors && frmGenerarPost.get('tittle')?.touched">
+                <p class="error" *ngIf="frmGenerarPost.get('tittle')?.hasError('required')">Titulo no puede estar vacio</p>
+            </ng-container>
+            <input type="text" formControlName="tittle" placeholder="Titulo">
+           
+            
+<!-- 
+            <label for="">Vinculo imagen</label>radio botones para seleccionar entra almacenamiento local o con link directo
+            <input type="radio" formControlName="imageUpload"  id="radioLink"  value="true">
+
+            <label for="">Nombre imagen</label>
+            <input type="radio" formControlName="imageUpload"  id="radioName"  value="false">
+                       -->
+            <ng-container *ngIf="frmGenerarPost.get('image')?.errors && frmGenerarPost.get('image')?.touched">
+                <p class="error" *ngIf="frmGenerarPost.get('image')?.hasError('required')">Titulo no puede estar vacio</p>
+            </ng-container>
+            <input type="text" formControlName="image" placeholder="Nombre o link imagen">
+            
+
+            <ng-container *ngIf="frmGenerarPost.get('text')?.errors && frmGenerarPost.get('text')?.touched">
+                <p class="error" *ngIf="frmGenerarPost.get('text')?.hasError('required')">El texto de la publicacion no puede estar vacio</p>
+            </ng-container>
+            <textarea formControlName="text" id="" cols="30" rows="10" placeholder="AQUI EL TEXTO DE TU PUBLICACION"></textarea>
+
+            <button class="btnMovil">PUBLICAR</button>
+    
+        </form>
+</section>

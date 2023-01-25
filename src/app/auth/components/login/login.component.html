@@ -1,0 +1,21 @@
+
+<section class="container">
+
+    <section class="main">
+        <form class="frm" (ngSubmit)="login()" [formGroup]="frmLogin">
+            <p><i class="fa-solid fa-screwdriver-wrench"></i> Panel adminstrativo </p>
+            <div class="field">
+                <i class="fa-solid fa-user"></i><input type="text" formControlName="user" placeholder="correo">
+            </div>
+
+            <div class="field">                          
+                <i class="fa-solid fa-lock"></i><input type="password" formControlName="password" placeholder="contraseña"> 
+            </div>
+
+                <input type="submit" class="btnMovil" value="ENTRAR">
+            
+            <a routerLink="">Olvidaste tu contraseña</a>
+        </form>
+        
+    </section>
+</section>

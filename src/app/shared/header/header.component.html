@@ -1,0 +1,24 @@
+<!-- la clase no-exist es una clase que realmente no existe en el css ya que fu inventada para alterar entre lod dos valores del ngClas paro se encontrara dentro de la documentacion -->
+<header class="header" [ngClass]="showMenu ? 'header-transparent' : '' ">
+    <nav class="navbar">
+        
+        <div class="logo"><a routerLink=""> <img src="assets/img/logo.gif" alt="logo"></a></div>
+        
+        <div class="menu" [ngClass]="showMenu ? 'show-menu' : 'no-exist'" >
+            <ul class="menu-list">
+                <li class="menu-list-items"  *ngFor="let item of itemsLink">
+                     <a (click)="changeStateNav()" routerLink="{{item.rute}}"><i class="{{item.icon}}"></i>{{item.nombre}}</a> 
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="menu-bar">
+            <div class="bar-btn" (click)="openAndCloseMenu()">
+                <i [ngClass]="showMenu ? 'fa-solid fa-x' : 'fas fa-bars' "></i>
+                
+            </div>
+        </div>
+
+    </nav>
+</header>
