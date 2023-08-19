@@ -1,0 +1,31 @@
+.dAlumno{
+    background-color: cyan;
+    width: 95%;
+
+}
+
+.bloque{
+    /* background-color: pink; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem .5rem;
+    
+    
+}
+
+.columna{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.titulo{
+    text-align: center;
+}
+
+.rgl{
+}
+

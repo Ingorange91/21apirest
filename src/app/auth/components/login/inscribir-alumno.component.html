@@ -1,0 +1,183 @@
+<form (ngSubmit)="inscribir()" [formGroup]="frmInscripcion"> 
+    <div class="dAlumno">
+        <p class="titulo">DATOS DEL ALUMNO</p>
+        <div class="bloque">
+            
+            <!-- <label for="">FECHA DE REGISTRO SERA TOMADA AUTOMATICAMENTE DEL SISTEMA</label> -->
+            <label class=""> NOMBRE DEL ALUMNO: </label>
+            <input class="inptxt" type="text" class="" placeholder="APELLIDO PATERNO" formControlName="apellidoAp">
+            <input class="inptxt" type="text" class="" placeholder="APELLIDO MATERNO" formControlName="apellidoAm">
+            <input class="inptxt" type="text" class="" placeholder="NOMBRES" formControlName="nombreA">
+
+        <!--  -->
+        </div>
+
+        
+        <div class="bloque">
+            <div class="columna">
+                <label for="">GRUPO</label>
+                <select formControlName="grupo">
+                    <option value="1A">1A</option>
+                    <option value="1B">1B</option>
+                    <option value="1C">1C</option>
+                    <option value="1D">1D</option>
+                    <option value="1E">1E</option>
+                    <option value="1F">1F</option>
+                    <option value="1G">1G</option>
+                </select>
+            </div>
+                
+            <div class="columna">
+                <label>TURNO</label>
+                <div class="rgl"><label>MATUTINO</label><input type="radio" formControlName="turno" value="matutino"></div>
+                <div class="rgl"><label>VESPERTINO</label><input type="radio" formControlName="turno" value="vespertino"></div>
+            </div>
+
+            <div class="columna">
+                FECHA DE NACIMIENTO            
+                <input type="date" id="start" name="fechaNacimiento" value="2023-08-21" formControlName="fNacimiento"/>
+            </div>
+
+            <div class="columna">
+            
+
+            <label for="">NACISTE EN MEXICO </label>            
+            <div class="rgl"><label>SI</label><input type="radio" formControlName="mexicano" value="si"></div>
+            <div class="rgl"><label>NO</label><input type="radio" formControlName="mexicano" value="no"></div>
+            <div class="rgl"><input type="text" placeholder="PAIS DE NACIMIENTO"></div>
+        
+            </div>
+            
+        
+        <!--  -->
+        </div>
+
+        <div class="bloque">
+            <div class="rgl"> <label>ESTADO</label><select name="estado">
+                <option value="extranjero">Seleccione uno...</option>
+                <option value="Aguascalientes">Aguascalientes</option>
+                <option value="Baja California">Baja California</option>
+                <option value="Baja California Sur">Baja California Sur</option>
+                <option value="Campeche">Campeche</option>
+                <option value="Chiapas">Chiapas</option>
+                <option value="Chihuahua">Chihuahua</option>
+                <option value="CDMX">Ciudad de México</option>
+                <option value="Coahuila">Coahuila</option>
+                <option value="Colima">Colima</option>
+                <option value="Durango">Durango</option>
+                <option value="Estado de México">Estado de México</option>
+                <option value="Guanajuato">Guanajuato</option>
+                <option value="Guerrero">Guerrero</option>
+                <option value="Hidalgo">Hidalgo</option>
+                <option value="Jalisco">Jalisco</option>
+                <option value="Michoacán">Michoacán</option>
+                <option value="Morelos">Morelos</option>
+                <option value="Nayarit">Nayarit</option>
+                <option value="Nuevo León">Nuevo León</option>
+                <option value="Oaxaca">Oaxaca</option>
+                <option value="Puebla">Puebla</option>
+                <option value="Querétaro">Querétaro</option>
+                <option value="Quintana Roo">Quintana Roo</option>
+                <option value="San Luis Potosí">San Luis Potosí</option>
+                <option value="Sinaloa">Sinaloa</option>
+                <option value="Sonora">Sonora</option>
+                <option value="Tabasco">Tabasco</option>
+                <option value="Tamaulipas">Tamaulipas</option>
+                <option value="Tlaxcala">Tlaxcala</option>
+                <option value="Veracruz">Veracruz</option>
+                <option value="Yucatán">Yucatán</option>
+                <option value="Zacatecas">Zacatecas</option>
+            </select></div>
+            
+            <label for="">CIUDAD</label><input type="text" name="" id="">
+
+            <div class="columna"><label for="">PESO</label><input type="number" step="0.01" name="numero" />
+            
+                <label for="">TALLA</label><input type="number" step="0.1" name="numero" />
+            </div>
+        </div>
+
+            
+    
+    <!--FIN estilos alumno dAlumnos-->
+    </div>
+
+
+
+    --------
+    DOMICILIO
+    <input type="text" placeholder="CALLE">
+    <input type="text" placeholder="NUMERO">
+    <input type="text" placeholder="COLONIA">
+    <input type="text" placeholder="CLAVE CATASTRAL">
+    
+    <label for="">TIENE ALGUN DIAGNOSTICO MEDICO</label> 
+    <label>SI</label><input type="radio" id="diagnostico" name="diagnostico" value="si">
+    <label>NO</label><input type="radio" id="diagnostico" name="diagnostico" value="no">
+    <input type="text" placeholder="¿CUAL ES TU DIAGNOSTICO MEDICO?">
+
+    <label>TIENES HERMANOS EN LA ESCUELA</label>
+    <label>SI</label><input type="radio" id="hermanos" name="hermanos" value="si">
+    <label>NO</label><input type="radio" id="hermanos" name="hermanos" value="no">
+    <select name="hermanos" id="lang">
+        <option value="2A">2A</option>
+        <option value="2B">2B</option>
+        <option value="2C">2C</option>
+        <option value="2D">2D</option>
+        <option value="2E">2E</option>
+        <option value="2F">2F</option>
+        <option value="2G">2G</option>
+        <option value="3A">3A</option>
+        <option value="3B">3B</option>
+        <option value="3C">3C</option>
+        <option value="3D">3D</option>
+        <option value="3E">3E</option>
+        <option value="3F">3F</option>
+        <option value="3G">3G</option>
+    </select>
+
+    
+    <label>PADRE DE FAMILIA</label>
+    <input type="text" placeholder="APELLIDO PATERNO">
+    <input type="text" placeholder="APELLIDO MATERNO">
+    <input type="text" placeholder="APELLIDO NOMBRES">
+    <input type="text" placeholder="EMAIL">
+
+    <label>ESCOLARIDAD</label>
+    <select name="">
+        <option value="sin estudioa">SIN ESTUDIOS</option>
+        <option value="primaria">PRIMARIA</option>
+        <option value="secundaria">SECUNDARIA</option>
+        <option value="preparatoria">PREPARATORIA</option>
+        <option value="licenciatura">LICENCIATURA</option>
+        <option value="postgrado">POSTGRADO</option>
+    </select>
+
+    <label>SITUACION DE LA ESCOLARIDAD</label>
+    <label>COMPLETA</label><input type="radio" id="diagnostico" name="escolaridad" value="completa">
+    <label>INCOMPLETA</label><input type="radio" id="diagnostico" name="escolaridad" value="incmpleta">
+
+    
+
+    <input type="tel" name="telefono" placeholder="TELEFONO DE CASA">
+    <input type="tel" name="telefono" placeholder="CELULAR">
+    <input type="tel" name="telefono" placeholder="TELEFONO DE FAMILIAR">
+    
+    <input type="text" placeholder="EN CASO DE EMERGENCIA LLAMAR A"> 
+    <input type="tel" placeholder="TELEFONO">
+    <input type="text" placeholder="CON QUIEN VIVE EL ALUMNO">
+
+
+    <input type="text" name="telefono" placeholder="EN CASO DE EMERGENCIA LLAMAR A">
+    <input type="tel" name="telefono" placeholder="TELEFONO">
+
+    
+    COMO TRABAJA EN CASA
+    TIENES INTERNET SI NO DATOS MOVILES
+    CON QUE DISPOSITIVOS CUENTAS
+    COMPARTES HERRAMIENTAS DE TRABAJO CON HERMANOS CUANTOS
+
+
+    <button type="submit">INSCRIBIR</button>
+
+</form>
